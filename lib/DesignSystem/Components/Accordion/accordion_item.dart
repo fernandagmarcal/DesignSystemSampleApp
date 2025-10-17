@@ -23,7 +23,6 @@ class _HpAccordionItemState extends State<HpAccordionItem>
 
   @override
   Widget build(BuildContext context) {
-    // Tokens do DS HP
     const double radius = 14;
     const EdgeInsets padding = EdgeInsets.symmetric(horizontal: 16, vertical: 14);
 
@@ -37,12 +36,8 @@ class _HpAccordionItemState extends State<HpAccordionItem>
           BoxShadow(
             color: Colors.black.withOpacity(0.06),
             blurRadius: 6,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
+            offset: const Offset(0, 2),),],),
       child: Theme(
-        // Remove default dividers do ExpansionTile
         data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(radius),
@@ -54,17 +49,14 @@ class _HpAccordionItemState extends State<HpAccordionItem>
             trailing: AnimatedRotation(
               turns: _expanded ? 0.5 : 0.0,
               duration: const Duration(milliseconds: 180),
-              child: Icon(Icons.expand_more, color: azulEscuro),
-            ),
+              child: Icon(Icons.expand_more, color: azulEscuro),),
             title: Text(
               widget.viewModel.title,
               style: const TextStyle(
                 fontFamily: 'Inter',
                 fontWeight: FontWeight.w700,    // título forte (HP)
                 fontSize: 18,
-                color: azulEscuro,
-              ),
-            ),
+                color: azulEscuro,),),
             subtitle: widget.viewModel.subtitle == null
                 ? null
                 : Text(
@@ -73,9 +65,7 @@ class _HpAccordionItemState extends State<HpAccordionItem>
                 fontFamily: 'Inter',
                 fontWeight: FontWeight.w500,
                 fontSize: 13,
-                color: azulEscuro,
-              ),
-            ),
+                color: azulEscuro,),),
             children: [
               // Linha dourada sutil entre header e conteúdo (HP)
               Container(

@@ -25,21 +25,8 @@ class AssetsSampleScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          // ===== Ícones =====
-          _SectionTitle('Ícones'),
-          const SizedBox(height: 8),
-          Wrap(
-            spacing: 16,
-            runSpacing: 16,
-            children: iconsVm.icons.map((i) {
-              return _IconChip(label: i.label, iconData: i.icon, color: i.color ?? marromQueimado,);}).toList(),),
-
-          const SizedBox(height: 28),
-
-          // ===== Fontes =====
-          _SectionTitle('Fontes (Inter)'),
-          const SizedBox(height: 8),
-          ...fontsVm.fonts.map((f) => _FontRow(sampleText: 'Venha conhecer o universo Harry Potter App!', label: f.label, family: f.fontFamily, weight: f.weight, size: f.size,),),],),);
+          _SectionTitle('Ícones'), const SizedBox(height: 8), Wrap(spacing: 16, runSpacing: 16, children: iconsVm.icons.map((i) {return _IconChip(label: i.label, iconData: i.icon, color: i.color ?? marromQueimado,);}).toList(),), const SizedBox(height: 28),
+          _SectionTitle('Fontes (Inter)'), const SizedBox(height: 8), ...fontsVm.fonts.map((f) => _FontRow(sampleText: 'Venha conhecer o universo Harry Potter App!', label: f.label, family: f.fontFamily, weight: f.weight, size: f.size,),),],),);
   }
 }
 
@@ -50,16 +37,15 @@ class _SectionTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      // Alinhamento para garantir que o Container ocupe a largura máxima
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-          color: azulPrincipal, // Fundo do texto (mantido)
+          color: azulPrincipal,
           child: Text(
             text,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              color: marromClarinho, // Cor do texto (inspirada no novo estilo)
+              color: marromClarinho,
               fontWeight: FontWeight.w700,),),), const SizedBox(height: 32),],);}}
 
 class _IconChip extends StatelessWidget {
@@ -115,9 +101,7 @@ class _FontRow extends StatelessWidget {
           fontFamily: family,
           fontWeight: weight,
           fontSize: size,
-          color: brancoPadrao,
-        ),
-      ),
+          color: brancoPadrao,),),
       subtitle: Text(
         label,
         style: Theme.of(context).textTheme.bodySmall?.copyWith(color: azulClaro),

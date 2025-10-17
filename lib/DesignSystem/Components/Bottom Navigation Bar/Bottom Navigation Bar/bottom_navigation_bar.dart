@@ -9,7 +9,6 @@ class CustomBottomNavigationBar extends StatefulWidget {
   @override
   _CustomBottomNavigationBarState createState() => _CustomBottomNavigationBarState();
 
-  // Método para instanciar o widget com o ViewModel apropriado
   static Widget instantiate({required ActionBottomBarViewModel viewModel}) {
     return CustomBottomNavigationBar._(viewModel);
   }
@@ -53,16 +52,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                   style: TextStyle(
                     fontSize: _getFontSize(widget.viewModel.size),
                     fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                    color: isSelected ? Colors.yellow : Colors.black,
-                  ),
-                ),
-              ],
-            ),
-          );
-        }),
-      ),
-    );
-  }
+                    color: isSelected ? Colors.yellow : Colors.black,),),],),);}),),);}
 
   double _getFontSize(ActionBottomBarOptionSize size) {
     switch (size) {

@@ -48,7 +48,7 @@ class ColorsSampleScreen extends StatelessWidget {
 }
 
 class _ColorCard extends StatelessWidget {
-  final DsColorEntry entry;
+  final ColorsItems entry;
   final String hex;
 
   const _ColorCard({required this.entry, required this.hex});

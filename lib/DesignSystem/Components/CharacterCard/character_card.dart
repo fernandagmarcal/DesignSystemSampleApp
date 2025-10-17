@@ -7,7 +7,7 @@ class CharacterCard extends StatelessWidget {
   final CharacterCardViewModel vm;
   const CharacterCard({super.key, required this.vm});
 
-  // cor da casa (chip)
+  // cor da casa
   Color _houseColor(String? house) {
     switch ((house ?? '').toLowerCase()) {
       case 'gryffindor':
@@ -96,7 +96,7 @@ class CharacterCard extends StatelessWidget {
 
                     const SizedBox(height: 8),
 
-                    // Chips de casa / espécie / patrono
+                    // casa / espécie / patrono
                     Wrap(
                       spacing: 8,
                       runSpacing: 8,
@@ -109,15 +109,13 @@ class CharacterCard extends StatelessWidget {
                           _Chip(text: 'Patrono: ${vm.patronus!}', color: marromClaro),
                       ],
                     ),
-
-                    // Linha dourada
                     Container(
                       height: 1,
                       color: marromClaro.withOpacity(0.6),
                       margin: const EdgeInsets.symmetric(vertical: 10),
                     ),
 
-                    // Detalhes (ancestralidade + varinha)
+                    //ancestralidade + varinha
                     if ((vm.ancestry ?? '').isNotEmpty)
                       _MetaRow(icon: Icons.family_restroom, label: 'Ancestralidade', value: vm.ancestry!),
                     if (vm.wand != null)
